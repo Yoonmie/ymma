@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if($_SESSION['login']==null)
+{
+  header("Location: login.php");
+}
+else {
+  if(isset($_POST['btn-logout'])) {
+    session_destroy();
+    header("Location: login.php");
+  }
+}
+?>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +21,7 @@
   <title>Home Page</title>
 </head>
 <body>
-
+<form action="home.php" method="post">
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +51,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="logout">Log Out</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="logout" name="btn-logout">Log Out</button>
     </form>
   </div>
 </nav>
@@ -51,27 +64,41 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-sm-12 mb-4">
-        <h2>Box01</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-        <a class="btn btn-primary btn-secondary" href="#" role="button">Detail</a>
-      </div>
-      <div class="col-lg-4 col-sm-12 mb-4">
-        <h2>Box02</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-        <a class="btn btn-primary btn-secondary" href="#" role="button">Detail</a>
-      </div>
-      <div class="col-lg-4 col-sm-12 mb-4">
-        <h2>Box03</h2>
-        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
-        <a class="btn btn-primary btn-secondary" href="#" role="button">Detail</a>
-      </div>
-    </div>
+<div class="container col-lg-8 col-sm-11">
+  <div class="row">
+  <div class="card col-5 p-0 mb-3">
+  <div class="card-header bg-secondary"> Featured </div>
+  <div class="card-body bg-light">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+  </div>
+  <div class="card col-5 p-0 offset-2 mb-3">
+  <div class="card-header bg-secondary"> Featured </div>
+  <div class="card-body bg-light">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+  </div>
+  <div class="card col-5 p-0 mb-3">
+  <div class="card-header bg-secondary"> Featured </div>
+  <div class="card-body bg-light">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+  </div>
+  <div class="card col-5 p-0 offset-2 mb-3 ">
+  <div class="card-header bg-secondary"> Featured </div>
+  <div class="card-body bg-light">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  </div>
+  </div>
+
+  </div>
   </div>
 </div>
-
+</form>
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
