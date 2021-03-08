@@ -31,7 +31,7 @@ if(isset($_POST['btnlogin'])) {
 }
 ?>
 <form action="login.php" method="post">
-  <div class="container border rounded-lg col-lg-8  col-sm-10  mt-5">
+  <div class="container border rounded-lg col-lg-6  col-sm-10  mt-5">
   <div class="form-group mt-3">
     <label for="email">Email address</label>
     <input type="email" class="form-control form-control-sm col-12" name="email" id="email" aria-describedby="emailHelp">
@@ -41,9 +41,7 @@ if(isset($_POST['btnlogin'])) {
     <input type="password" class="form-control form-control-sm col12" name="pw" id="password">
   </div>
   <a href="#">Register Now</a>
-  <div class="form-group d-flex justify-content-center">
-  <button type="submit" class="btn btn-info col-offset-3" name="btnlogin">Log In</button>
-  </div>
+  <button type="submit" class="btn btn-info col-12 mt-3 mb-3 " name="btnlogin">Log In</button>
   </div>
 </form>
 </body>
