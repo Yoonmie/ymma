@@ -33,7 +33,7 @@ if(isset($_POST['btnlogin'])) {
 <body class="bg-light">
 
 <form action="login.php" method="post">
-  <div class="container border rounded-lg col-lg-6  col-sm-10  mt-5">
+  <div class="container border rounded-lg col-lg-6  col-sm-10  col-10 mt-5">
   <div class="form-group mt-3">
     <label for="email">Email address</label>
     <input type="email" class="form-control form-control-sm col-12" name="email" id="email" aria-describedby="emailHelp">
